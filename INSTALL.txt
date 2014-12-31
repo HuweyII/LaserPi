@@ -23,3 +23,6 @@ Running the software:
 Executing LaserPi-Main.py should start the software and turn on the laser.  It will also display a help screen.  
 Executing LaserPi-Main.py -v increases verbosity.
 More info on usage in README.md
+
+IMPORTANT: Servos can be reuined by asking them to go beyond their limits.  They're stupid that way.  Servo limits are controled by the following variables in the LaserPi-Main.py file.  I suggest that the first time you run the software you use the a, s, d, f  slowly and carefully keys to drive your servos to their limits and make sure the software isn’t going to let them go too far.  The standard settings (shown below) should be safe for most servos, but you should make sure.
+azirightlimit, azileftlimit, alttoplimit, altbottomlimit
