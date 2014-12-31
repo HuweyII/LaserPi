@@ -8,4 +8,3 @@ Things that need to be done in the future.
 
 --Make a veriable so that autolaser will start by default when program starts
 
---Make a way to have autolaser run forever if desired.
