@@ -6,3 +6,6 @@ Things that need to be done in the future.
 
 --Make autolaser AutoLaserStepLimit (How long autolaser runs) something that is settable when the system is running.  In the same watch twitch is set via - or +
 
+--Make a veriable so that autolaser will start by default when program starts
+
+--Make a way to have autolaser run forever if desired.
