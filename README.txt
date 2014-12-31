@@ -44,3 +44,31 @@ To set the random defined space drive the laser to a corner of space with the a,
 Display the random points defined by pressing the p key.  The laser will drive to each point in turn, showing your area.
 
 To quit use capital Q
+
+Theory Of Operation:
+The main program just sets up variables and then listens for key strokes, changing variables as need.  Most of the real work is done by various threads which the main program starts.
+
+The servos are controlled by one thread each.  Any function which would move a servo must change a variable that this thread will notice changed, wake up, move the servo, and then go back to sleep. Running things in this way prevents arguments by various functions over who should be moving servos.
+
+THREADS:
+aziThread - Runs moveazi function 
+Commands the Azi servo.  The only way the Azi servo is ever moved is via this thread.
+
+altThread - Runs movealt function.
+Commands the Alt servo.  The only way the Alt servo is ever moved is via this thread.
+
+TwitchThread - Runs twitchy function.
+ When twitch is active this thread randomly changes the aziservo and altservo variables random amounts (thus causing other threads to move the servos).  Then waits a short time and does it again.  Also after 10 random steps it sets the variables back to where they were so that there isn’t much wandering around.
+    twitchy function is aware of changes made to the altservo and aziservo variables made by other threads.   In such a way that twitching continues but servos stay in the area commanded by other threads.
+    twitchy function isn’t aware of servo limits.  However the threads that move the servos are and won’t move the servos past their limits.
+
+An additional thread started as a trigger thread by the adafruit code for the touch switch (GPIO.add_event_detect)  This acts as an interrupt driven switch so that we don’t have to waste a bunch of CPU checking the touch switch all the time.
+
+RANDOM (autolaser function):
+Random works by feeding four points of a polygon (as X,Y coordinates) into the Polygon function of the shapely.geometry python module.  Getting from that the bounds of the Polygon.  This happens in the get_bounds_of_polygon function.
+
+Random then goes into a loop where it runs the get_random_point_in_polygon function.  In which a random coordinate (X,Y) is generated within the servo’s range of motion.  The Point function of the shapely.geometry python module is then queried to find out if the randomly generated point is within the previously defined polygon.  If not a loop tried again.  If the randomly generated point is within the polygon the altservo and aziservo variables are changed and the servo’s drive to the new point.  autolaser then waits a random amount of time before starting again.
+
+If started from the touch switch random will stop it’s loop after AutoLaserStepCount number of steps.  If started by the R key it will run forever until the loop is broken with CTRL-c
+
+Polygon points are read and stored in a file via the pickle.dump python module.  This way when the program stops and starts again later it still knows the points of it’s polygon.
