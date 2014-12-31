@@ -26,6 +26,22 @@ twitchMin = 0.25
 twitchMax = 4
 twitchStep = 0.25
 
+#Azi servo limits
+##Lower numbers = farther right as the device faces
+azirightlimit = 280
+azileftlimit = 560
+##Determine Azi servo center and set servo start point
+aziCenter = int(((azileftlimit - azirightlimit) / 2) + azirightlimit)
+aziservo = aziCenter + 1 
+
+#Alt servo limits
+##Lower number = lower altitude
+alttoplimit = 250
+altbottomlimit = 560
+##Determine Alt servo center and set servo start point
+altCenter = int(((altbottomlimit - alttoplimit) / 2) + alttoplimit)
+altservo = altCenter + 1 
+
 ########################
 #Verbose logging stuff
 parser = argparse.ArgumentParser(
@@ -76,18 +92,6 @@ GPIO.setup(21, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 #Message that gets printed when you hit the wrong key
 helpmsg = "Use a, s, d, f, c, l, R, or Q to quit"
-
-#Lower numbers = farther right as the device faces
-azirightlimit = 280
-azileftlimit = 560
-aziCenter = int(((azileftlimit - azirightlimit) / 2) + azirightlimit)
-aziservo = aziCenter + 1 
-
-#Lower number = lower altitude
-alttoplimit = 250
-altbottomlimit = 560
-altCenter = int(((altbottomlimit - alttoplimit) / 2) + alttoplimit)
-altservo = altCenter + 1 
 
 ####### Setup Threads
 
