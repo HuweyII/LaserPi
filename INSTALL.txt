@@ -2,12 +2,9 @@
 https://github.com/HuweyII/LaserPi
 v. 1.0 
 
-
 This document assumes a default wheezy raspbian Pi installed and already boots.  And that you know how to login and run commands as root, etc.
 
-
 The LaserPi will need the following Python modules installed.  (Install with the command, run as root: apt-get install MODULE-NAME)
-
 
 For the PWM Board:
 python-smbus
@@ -15,15 +12,12 @@ i2c-tools
 The code will use module to calculate polygon points:
         python-shapely
 
-
 Add to the bottom of the file /etc/modules (This will require a reboot to take effect):
 i2c-dev
 i2c-bcm2708
 
-
 Test to make sure the i2c bus is working.  If the Servo Board is connected properly running this command should show the Servo Board (as 40) at 0x40
 i2cdetect -y 1
-
 
 Running the software:
 Executing LaserPi-Main.py should start the software and turn on the laser.  It will also display a help screen.  
