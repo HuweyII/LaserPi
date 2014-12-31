@@ -1,0 +1,8 @@
+Laser Pi
+
+Things that need to be done in the future.
+
+--Move autolaser function into thread.  Make it stop and start via R key via variable instead of sitting a loop and needing CTRL-c to exit loop.
+
+--Make autolaser AutoLaserStepLimit (How long autolaser runs) something that is settable when the system is running.  In the same watch twitch is set via - or +
+
