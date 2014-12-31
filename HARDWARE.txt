@@ -46,7 +46,7 @@ Alt Servo Orange Wire - Servo Board 1 PWM
 
 
 Connect power to system via Servo Board terminal block.  
-“Female DC Power adapter - 2.1mm jack to screw terminal block” listed above makes this easy when used with power supply listed above.
+Female DC Power adapter - 2.1mm jack to screw terminal block listed above makes this easy when used with power supply listed above.
 
 
 ________________
@@ -55,13 +55,10 @@ ________________
 Hardware Arrangement
 Really put this in any sort of box you want.  I used a radio shack project box in the end but for most of the project I just had the Pi in a Pi case and the Azi servo clamped in a PanaVise.  With the PWM board rubber banded to the whole thing.
 
-
-When building the servo stack make sure to maintain proper orientation.  The side of the servo where the wire exits is considered the front.  On both servos the front of the servo should point in the same direction as the front of the laser.  When looking at the back of the Azi servo the Alt servo should be mounted so that the laser will be to the RIGHT of the stack.  (Said another way; When looking down on the Alt servo output shaft counter clockwise rotation should cause the laser to point higher in altitude.) Because this is a bit fiddly you might want to just leave the servos and laser laying loose until you’ve got the software working.  Then it will be clear which way to mount things.
- 
-
+IMPORTANT: When building the servo stack make sure to maintain proper orientation.  The side of the servo where the wire exits is considered the front.  On both servos the front of the servo should point in the same direction as the front of the laser.  When looking at the back of the Azi servo the Alt servo should be mounted so that the laser will be to the RIGHT of the stack.  (Said another way; When looking down on the Alt servo output shaft counter clockwise rotation should cause the laser to point higher in altitude.) Because this is a bit fiddly you might want to just leave the servos and laser laying loose until you've got the software working.  Then it will be clear which way to mount things.
 
 Mount the largest included servo arm onto each of the servos.
-        NOTE: It is important to make sure the servo arms are rotationally centered on the servo output shaft.  You may have to put an arm on the servo and run it back and forth to figure out where the rotational center of the servo is.  The arm should be perpendicular with the long axis of the servo case when the servo’s output shaft is rotationally centered.
+        NOTE: It is important to make sure the servo arms are rotationally centered on the servo output shaft.  You may have to put an arm on the servo and run it back and forth to figure out where the rotational center of the servo is.  The arm should be perpendicular with the long axis of the servo case when the servo's output shaft is rotationally centered.
 Using two small zip ties (or double sided tape) mount the laser to the Alt servo arm
 Using double sided sticky tape stick the Alt servo to Azi servo arm.
         NOTE: You should probably remove the any servo label to make sure the double sided tapes holds on well.
@@ -83,13 +80,13 @@ ________________
 
 Links
 Adafruit Standalone Momentary Capacitive Touch Sensor Breakout - AT42QT1010
-http://www.adafruit.com/products/1374        
+	http://www.adafruit.com/products/1374        
 Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685
         http://www.adafruit.com/products/815
 Capacitor
         http://www.adafruit.com/product/1589
 Turnigy TGY-180D 180 degree Digital Servo 2.2kg/12g/0.10
-http://www.hobbyking.com/hobbyking/store/__19392__Turnigy_TGY_180D_180_degree_Digital_Servo_2_2kg_12g_0_10.html
+	http://www.hobbyking.com/hobbyking/store/__19392__Turnigy_TGY_180D_180_degree_Digital_Servo_2_2kg_12g_0_10.html
 Quarton Laser Module VLM-650-03 LPA (ECONOMICAL DOT LASER)
         http://www.amazon.com/gp/product/B00ARAVIMC
 Adafruit 5V 4A switching power supply
