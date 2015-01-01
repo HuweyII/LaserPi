@@ -10,3 +10,4 @@ Things that need to be done in the future.
 
 --Make an easy way to reverse servos.  
 
+--Make an easy way to disable remote start via touch switch.
