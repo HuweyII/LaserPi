@@ -2,6 +2,8 @@
 https://github.com/HuweyII/LaserPi
 v. 1.0
 
+Pictures available here -- http://imgur.com/a/dYUYn
+
 Video of version 0.1 (very old) of this is available on youtube
 http://youtu.be/nJSfPyN7-30
 
